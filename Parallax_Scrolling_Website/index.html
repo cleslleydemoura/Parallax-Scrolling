@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>What's Behind?</title>
+</head>
+<body>
+    <!-- Parallax Scrolling Website | Vanilla JavaScript-->
+    <header>
+        <a href="#" class="logo"><img src="img/sun.png" alt=""></a>
+        <ul>
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </header>
+    <section>
+        <img src="img/stars.png" alt="stars" id="stars">
+        <img src="img/mountains_behind.png" alt="mountains" id="mountains_behind">
+        <h2 id="text">What's Behind?</h2>
+        <a href="#" id="btn">Explore</a>
+        <img src="img/mountains_front.png" alt="mountains" id="mountains_front">
+    </section>
+    <div class="sec" id="sec">
+        <h2>Parallax Scrolling Effects</h2>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta perspiciatis aspernatur ad suscipit, harum illum. Soluta obcaecati illum ducimus deserunt quae veniam laudantium cum? Porro excepturi vero non facere tenetur? Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum quas repellat ut dolorem deserunt? Unde, doloribus eaque. Enim quos temporibus labore nisi reprehenderit, ipsum officia voluptates dolorem dignissimos veniam praesentium. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et, ad, adipisci eum sequi molestias fuga illo eius nisi est perspiciatis nostrum accusantium quasi ratione veniam vel! Impedit exercitationem ipsum ea? <br><br> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta perspiciatis aspernatur ad suscipit, harum illum. Soluta obcaecati illum ducimus deserunt quae veniam laudantium cum? Porro excepturi vero non facere tenetur? Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum quas repellat ut dolorem deserunt? Unde, doloribus eaque. <br><br> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dicta perspiciatis aspernatur ad suscipit, harum illum. Soluta obcaecati illum ducimus deserunt quae veniam laudantium cum? Porro excepturi vero non facere tenetur? Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum quas repellat ut dolorem deserunt? Unde, doloribus eaque. Enim quos temporibus labore nisi reprehenderit, ipsum officia voluptates dolorem dignissimos veniam praesentium. Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et, ad, adipisci eum sequi molestias fuga illo eius nisi est perspiciatis nostrum accusantium quasi ratione veniam vel! Impedit exercitationem ipsum ea? </p>
+    </div>
+    <script>
+        let stars = document.getElementById('stars');
+        let mountains_behind = document.getElementById('mountains_behind');
+        let text = document.getElementById('text');
+        let btn = document.getElementById('btn');
+        let mountains_front = document.getElementById('mountains_front');
+        let header = document.querySelector('header');
+
+        window.addEventListener('scroll', function(){
+            let value = window.scrollY;
+            stars.style.left =  value * 0.25 + 'px';
+            mountains_behind.style.top =  value * 0.05 + 'px';
+            mountains_front.style.top =  value * 0 + 'px';
+            text.style.marginRight = value * 4 + 'px';
+            text.style.marginTop = value * 1.5 + 'px';
+            btn.style.marginTop = value * 1.5 + 'px';
+            header.style.top = value * 0.5 + 'px';
+        })
+    </script>
+</body>
+</html>
